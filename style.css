@@ -1,0 +1,77 @@
+:root { 
+    --bg-dark: #0f172a; 
+    --primary: #3b82f6; 
+    --card-bg: #1e293b; 
+    --text-main: #f8fafc; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg-dark); 
+    color: var(--text-main); 
+    margin: 0; 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+.sidebar { 
+    width: 260px; 
+    background: #1e293b; 
+    padding: 30px 20px; 
+    border-right: 1px solid #334155; 
+}
+
+.sidebar h2 { 
+    font-size: 20px; 
+    color: var(--primary); 
+    margin-bottom: 40px; 
+}
+
+.content { 
+    flex: 1; 
+    padding: 50px; 
+}
+
+.card { 
+    background: var(--card-bg); 
+    padding: 30px; 
+    border-radius: 20px; 
+    border: 1px solid #334155; 
+    max-width: 600px; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 10px; 
+    font-weight: 600; 
+    color: #94a3b8; 
+    font-size: 13px; 
+}
+
+input { 
+    width: 100%; 
+    background: #0f172a; 
+    border: 1px solid #334155; 
+    padding: 12px; 
+    border-radius: 10px; 
+    color: white; 
+    margin-bottom: 20px; 
+    box-sizing: border-box; 
+}
+
+.btn-save { 
+    background: #10b981; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    border-radius: 12px; 
+    font-weight: 700; 
+    width: 100%; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.btn-save:hover { 
+    background: #059669; 
+    transform: translateY(-2px); 
+}

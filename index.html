@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard CBT | SMAN 23 Batam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>ADMIN CBT</h2>
+        <div style="color: #3b82f6; font-weight: bold;">● Dashboard</div>
+    </div>
+    <div class="content">
+        <h1>Pengaturan Ujian</h1>
+        <div class="card">
+            <label>LINK GOOGLE SITES / FORM</label>
+            <input type="text" id="site-url" placeholder="https://sites.google.com/view/...">
+            <label>PASSWORD MASUK</label>
+            <input type="text" id="p-in" placeholder="Password untuk Siswa">
+            <label>PASSWORD KELUAR</label>
+            <input type="text" id="p-out" placeholder="Password untuk Keluar">
+            <button class="btn-save" onclick="saveData()">SIMPAN KONFIGURASI</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
