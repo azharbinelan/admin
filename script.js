@@ -1,4 +1,18 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbwRFbWalfPUExSBzyI_aXNGcBOkD6S-i7UYWtQ2-nLYPDHhJcNLpkcDCrp76tEEOuqAkA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwRFbWalfPUExSBzyI_aXNGcBOkD6S-i7UYWtQ2-nLYPDHhJcNLpkcDCrp76tEEOuqAkA/exec"; // Tempel link deployment di sini
+
+window.onload = async function() {
+    try {
+        const response = await fetch(API_URL);
+        const config = await response.json();
+        if (config.url) {
+            document.getElementById('site-url').value = config.url;
+            document.getElementById('p-in').value = config.pin;
+            document.getElementById('p-out').value = config.pout;
+        }
+    } catch (err) {
+        console.error("Gagal memuat data dari Cloud.");
+    }
+};
 
 async function saveData() {
     const config = {
@@ -12,12 +26,13 @@ async function saveData() {
     }
 
     try {
+        // Mengirim data ke Google Sheets
         await fetch(API_URL, {
             method: 'POST',
             body: JSON.stringify(config)
         });
-        alert("✅ Data Berhasil Disimpan ke Cloud!");
+        alert("✅ Konfigurasi Berhasil Disimpan ke Cloud!");
     } catch (err) {
-        alert("Gagal menyimpan ke Cloud: " + err);
+        alert("Gagal menyimpan: " + err);
     }
 }
